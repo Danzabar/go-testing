@@ -6,9 +6,20 @@ import (
 	"os"
 )
 
+var app *cli.App
+
 func main() {
-	app := cli.NewApp()
-	app.Name = "random"
+
+	app = cli.NewApp()
+	app.Name = "Random stuffs"
+
+	addCommands()
+
+	app.Run(os.Args)
+}
+
+func addCommands() {
+
 	app.Commands = []cli.Command{
 		{
 			Name:        "string",
@@ -20,6 +31,4 @@ func main() {
 			},
 		},
 	}
-
-	app.Run(os.Args)
 }

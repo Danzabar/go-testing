@@ -10,3 +10,7 @@ func TestRandStr(t *testing.T) {
 
 	assert.Equal(t, len(rand), 5)
 }
+
+func BenchmarkRand(b *testing.B) {
+	randStr(10)
+}
